@@ -35,6 +35,9 @@ pipeline {
             steps { 
                 echo 'Terraform ${params.Deployment_Type} phase'  
                 sh "AWS_REGION=us-east-1 terraform ${params.Deployment_Type} -target=module.vpc -target=module.eks-cluster --auto-approve"
+                
+                sh("""chmod +x scripts/install_helm.sh""")
+                sh("""chmod +x scripts/update-kubeconfig.sh""")
                 sh("""scripts/update-kubeconfig.sh""")
                 sh("""scripts/install_helm.sh""") 
                 }
