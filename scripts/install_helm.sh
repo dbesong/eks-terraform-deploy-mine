@@ -1,5 +1,5 @@
 #!/bin/bash
-chmod +x scripts/install_helm.sh
+
 
 
 
