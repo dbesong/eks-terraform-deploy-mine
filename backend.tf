@@ -1,9 +1,13 @@
+
+
+
+
 terraform {
-  required_version = ">=0.12.0"
+  required_version = "<=1.9.7"
   backend "s3" {
-    key            = "infra/terraform.state"
-    bucket         = "dominion-terraform-backend-bucket"
-    region         = "us-west-2"
-    dynamodb_table = "terraform-state-locking"
+    key            = "global/dev/eks-cluster/terraform.tfstate"
+    bucket         = "lmt-training-terraform-backend-bucket"
+    region         = "us-east-1"
+    dynamodb_table = "terraform-lock-table"
   }
 }
