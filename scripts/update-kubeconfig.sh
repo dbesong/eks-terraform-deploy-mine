@@ -1,4 +1,6 @@
 #!/bin/bash
+chmod +x scripts/update-kubeconfig.sh
+
 response="$(aws eks list-clusters --region us-east-1 --output text | grep -i dominion-cluster 2>&1)" 
 if [[ $? -eq 0 ]]; then
     echo "Success: Dominion-cluster exist"

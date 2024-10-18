@@ -1,4 +1,7 @@
 #!/bin/bash
+chmod +x scripts/install_helm.sh
+
+
 
 # Function to check if a command exists
 command_exists() {
