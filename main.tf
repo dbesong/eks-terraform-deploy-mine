@@ -4,7 +4,7 @@
 
 module "vpc" {
   source      = "./modules/vpc"
-  main-region = var.main-region
+  region = var.region
 }
 
 # ################################################################################
@@ -27,7 +27,7 @@ module "eks" {
 module "aws_alb_controller" {
   source = "./modules/aws-alb-controller"
 
-  main-region  = var.main-region
+  region  = var.region
   env_name     = var.env_name
   cluster_name = var.cluster_name
 
@@ -42,7 +42,7 @@ module "aws_alb_controller" {
 # module "managed_grafana" {
 #   source             = "./modules/grafana"
 #   env_name           = var.env_name
-#   main-region        = var.main-region
+#   region        = var.region
 #   private_subnets    = module.vpc.private_subnets
 #   sso_admin_group_id = var.sso_admin_group_id
 # }
@@ -56,7 +56,7 @@ module "aws_alb_controller" {
 # module "prometheus" {
 #   source            = "./modules/prometheus"
 #   env_name          = var.env_name
-#   main-region       = var.main-region
+#   region       = var.region
 #   cluster_name      = var.cluster_name
 #   oidc_provider_arn = module.eks.oidc_provider_arn
 #   vpc_id            = module.vpc.vpc_id
@@ -72,7 +72,7 @@ module "aws_alb_controller" {
 # module "vpcendpoints" {
 #   source                    = "./modules/vpcendpoints"
 #   env_name                  = var.env_name
-#   main-region               = var.main-region
+#   region               = var.region
 #   vpc_id                    = module.vpc.vpc_id
 #   private_subnets           = module.vpc.private_subnets
 #   grafana_security_group_id = module.managed_grafana.security_group_id

@@ -122,7 +122,7 @@ resource "helm_release" "prometheus" {
 
   set {
     name  = "server.remoteWrite[0].sigv4.region"
-    value = var.main-region
+    value = var.region
   }
 
 }
