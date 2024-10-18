@@ -61,15 +61,15 @@ variable "env_name" {
 # # VPC Variables
 # ################################################################################
 
-variable "vpc_id" {
-  description = "VPC ID which Load balancers will be  deployed in"
-  type        = string
-}
+# variable "vpc_id" {
+#   description = "VPC ID which Load balancers will be  deployed in"
+#   type        = string
+# }
 
-variable "private_subnets" {
-  description = "A list of private subnets"
-  type        = list(string)
-}
+# variable "private_subnets" {
+#   description = "A list of private subnets"
+#   type        = list(string)
+# }
 
 ################################################################################
 # AWS SSO Variables
